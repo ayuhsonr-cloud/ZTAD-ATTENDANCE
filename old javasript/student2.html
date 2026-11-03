@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZTAD Student Attendance System</title>
+    <link rel="stylesheet" href="style2.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <h2 class="title">ZTAD Student Attendance System</h2>
+      <nav class="nav">
+        <a href="./attendance2.html"
+          ><button class="nav-button">Attendance</button></a
+        >
+        <a href="./student2.html"
+          ><button class="nav-button">Students</button></a
+        >
+      </nav>
+    </header>
+
+    <section class="heading">
+      <h1>Students</h1>
+      <p>Manage the students whose attendance is tracked</p>
+    </section>
+
+    <main class="card">
+      <div class="toolbar">
+        <div class="left-controls">
+          <input
+            class="search"
+            id="student_search"
+            type="search"
+            placeholder="🔍 Search by name or track"
+          />
+        </div>
+
+        <div class="right-controls">
+          <button class="btn btn-red" id="open-dialog" type="button">
+            Add Student
+          </button>
+        </div>
+
+        <dialog id="dialog-student">
+          <h2 id="h2">Add a student</h2>
+          <form action="" id="student-form">
+            <input id="student-id" type="hidden" />
+            <p id="student-form-error" class="form-error" aria-live="polite"></p>
+
+            <label for="student-name">Name of Student</label> <br />
+            <input type="text" name="student-name" id="student-name" /> <br />
+
+            <label for="student-track">Track</label>
+            <!-- FIX: added value="" attributes so index.js stores clean
+                 lowercase values ("frontend"/"backend") as the README requires,
+                 not the capitalised display text ("Frontend"/"Backend"). -->
+            <select id="student-track">
+              <option value="frontend">Frontend</option>
+              <option value="backend">Backend</option>
+            </select>
+
+            <label for="student-status">Status</label>
+            <!-- FIX: same reasoning, values are now "active"/"inactive" -->
+            <select id="student-status">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+            <p class="error-message"></p>
+            <div>
+              <button class="clockin" type="submit">Save</button>
+              <button class="settings" id="cancel-dialog" type="button">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </dialog>
+      </div>
+
+      <dialog id="delete-dialog" aria-labelledby="delete-dialog-heading">
+        <form id="delete-form" method="dialog">
+          <h2 id="delete-dialog-heading">Delete Student</h2>
+          <p id="delete-message"></p>
+          <div class="dialog-actions">
+            <button class="secondary-button" type="button" id="close-delete-button">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="danger-button"
+              id="confirm-delete-button"
+            >
+              Delete
+            </button>
+          </div>
+        </form>
+      </dialog>
+
+      <p class="subtitle">Registered Students</p>
+
+      <table class="table">
+        <caption class="visually-hidden">Registered students</caption>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>STUDENT</th>
+            <th>TRACK</th>
+            <th>STATUS</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody id="student-body"></tbody>
+      </table>
+    </main>
+  </body>
+</html>

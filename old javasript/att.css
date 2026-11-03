@@ -1,0 +1,198 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    /* background: none; */
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    outline: none;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: lightgrey;
+
+}
+
+.registers{
+    background-color: white;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+
+
+img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+}
+
+.logo {
+    width: 20px;
+    background-color: blue;
+}
+
+.attend {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+    text-transform: capitalize;
+
+}
+
+.link {
+    color: black;
+}
+
+.link:hover {
+    border-bottom: 1px solid orangered;
+}
+
+.abbreviation {
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 900px;
+}
+
+.heading {
+    text-transform: capitalize;
+    font-weight: 900px;
+}
+
+.register{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.date{
+    display: flex;
+   gap: 50px;
+   margin-bottom: 20px;
+}
+
+.number{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.input-date{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.submit-phase{
+    display: flex;
+    gap: 20px;
+    
+}
+
+.clockin{
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.setting{
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.clockin:hover{
+    background-color: orangered;
+    color: white;
+    transition: ease 5ms;
+}
+
+.setting:hover{
+    background-color: orangered;
+    color: white;
+}
+
+.infos{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+
+.line{
+    border: 1px solid black;
+    margin-top: 15px;
+    
+}
+
+.values{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin-top: 30px;
+    gap: 5px;
+}
+
+
+.para{
+    text-transform: capitalize;
+}
+
+
+/* .register-number{
+    border: 1px solid black;
+    /* padding: 5px; */
+
+
+/* .register-name{
+    border: 1px solid black;
+}
+
+.track{
+    border: 1px solid black;
+}
+
+.status{
+    border: 1px solid black;
+}
+
+.clockin-value{
+    border: 1px solid black;
+}
+
+.clockout-value{
+    border: 1px solid black;
+}
+
+.dailytotal{
+    border: 1px solid black;
+}  */
+
+/* .actions{
+    border: 1px solid black;
+} */

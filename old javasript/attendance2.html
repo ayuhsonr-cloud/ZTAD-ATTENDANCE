@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZTAD Student Attendance System</title>
+  <link rel="stylesheet" href="style2.css" />
+  <script src="./attendance.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <h2 class="title">ZTAD Student Attendance System</h2>
+    <nav class="nav">
+      <a href="./attendance2.html"><button class="nav-button">Attendance</button></a>
+      <a href="./student2.html"><button class="nav-button">Students</button></a>
+    </nav>
+  </header>
+
+  <section class="heading">
+    <h1>Attendance</h1>
+    <p>
+      Record and review each student's company time for the selected date.
+    </p>
+  </section>
+
+  <main class="card" id="attendance-form">
+    <div class="toolbar">
+      <div class="left-controls">
+        <label class="date">
+          Date
+          <!-- FIX: was `type="attendance-date"` (a bad, duplicate type
+                 attribute). This is now a proper id so the script can find it. -->
+          <input type="date" id="attendance-date" />
+        </label>
+        <input class="search" type="text" placeholder="🔍 Search by name or track" id="attendance-search" />
+      </div>
+
+      <div class="right-controls">
+        <button type="button" id="clockin-btn" class="btn btn-red">
+          Clock in
+        </button>
+        <button class="btn btn-gray" id="settings-btn">Settings</button>
+      </div>
+    </div>
+
+    <p class="subtitle">Attendance for the selected date</p>
+
+    <table class="table">
+      <caption class="visually-hidden">
+        Attendance for the selected date
+      </caption>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>STUDENT</th>
+          <th>TRACK</th>
+          <th>STATUS</th>
+          <th>CLOCK IN</th>
+          <th>CLOCK OUT</th>
+          <th>DAILY TOTAL</th>
+          <th>ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody id="attendance-body"></tbody>
+    </table>
+  </main>
+
+  <dialog id="clock-in-dialog" class="dia1">
+    <form id="clock-in-form" novalidate>
+      <h2>Clock in</h2>
+      <label for="clock-in-student">Students</label>
+      <select id="clock-in-student" required aria-describedby="clock-in-error"></select>
+      <label for="clock-in-time">Clock-in time</label>
+      <!-- FIX: aria-describedby had a space instead of a hyphen -->
+      <input id="clock-in-time" type="time" required aria-describedby="clock-in-error" />
+      <p id="clock-in-error" class="form-error" aria-live="polite"></p>
+      <div class="third-part">
+        <button class="secondary-button" type="button" data-close>
+          Cancel
+        </button>
+        <button type="submit">Clock in</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- FIX: clock-out dialog did not exist at all -->
+  <dialog id="clock-out-dialog" class="dia2">
+    <form id="clock-out-form" novalidate>
+      <h2>Clock out</h2>
+      <p id="clock-out-info"></p>
+      <label for="clock-out-time">Clock-out time</label>
+      <input id="clock-out-time" type="time" required aria-describedby="clock-out-error" />
+      <p id="clock-out-error" class="form-error" aria-live="polite"></p>
+      <div class="dialog-actions">
+        <button class="secondary-button" type="button" data-close>
+          Cancel
+        </button>
+        <button type="submit">Clock out</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- FIX: settings dialog did not exist at all -->
+  <dialog id="settings-dialog" class="desettings" style="
+        border: none;
+        border-radius: 10px;
+
+        gap: 2px;
+        justify-self: center;
+        background-color: rgb(224, 223, 223);
+        box-shadow: 2px 2px 2px 2px #9d8278;
+        align-items: center;
+        display: flexbox;
+      ">
+    <form id="settings-form" novalidate>
+      <h2>Settings</h2>
+      <legend>Working days</legend>
+      <fieldset style="display: flex; margin: 0; padding: 20px">
+        <div style="display: flex; flex-direction: column; align-items: left">
+          <label for="mon"> Monday</label>
+          <input style="margin-left: -120px" type="checkbox" name="mon" value="0" />
+          <label for="tues"> Tuesday</label>
+          <input style="margin-left: -120px" type="checkbox" name="tues" value="0" />
+          <label for="wed">Wednesday</label>
+          <input style="margin-left: -120px" type="checkbox" name="wed" value="0" />
+          <label for="thu"> Thursday</label>
+          <input style="margin-left: -120px" type="checkbox" name="thu" value="0" />
+        </div>
+
+        <div style="display: flex; flex-direction: column; align-items: left">
+          <label for="frid"> Friday</label>
+          <input style="margin-left: -120px" type="checkbox" name="frid" value="0" />
+          <label for="sat">Saturday</label>
+          <input style="margin-left: -120px" type="checkbox" name="sat" value="0" />
+          <label for="sund"> Sunday</label>
+          <input style="margin-left: -120px" type="checkbox" name="sund" value="0" />
+        </div>
+      </fieldset>
+      <div style="display: flex; flex-direction: column">
+        <label for="open-time">Opening time</label>
+        <input id="open-time" type="time" required />
+        <label for="close-time">Closing time</label>
+        <input id="close-time" type="time" required />
+      </div>
+      <p id="settings-error" class="form-error" aria-live="polite"></p>
+      <div class="dialog-actions" style="margin-top: 0">
+        <button class="secondary-button" type="button" data-close>
+          Cancel
+        </button>
+        <button type="submit" style="background-color: #c85a32; color: white">
+          Save settings
+        </button>
+      </div>
+    </form>
+  </dialog>
+</body>
+
+</html>

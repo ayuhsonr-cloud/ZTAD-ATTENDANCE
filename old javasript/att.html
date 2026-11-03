@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attendance page</title>
+    <link rel="stylesheet" href="./att.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="attend">
+            <div class="abbreviation">ztad students attendance system</div>
+            <div class="links">
+                <a href="#" class="link">attendance</a>
+                <a href="#" class="link">students</a>
+            </div>
+        </div>
+        <div class="header-section">
+            <h2 class="heading">attendance</h2>
+            <p class="para">record and review each student's company time for the selected date</p>
+        </div>
+        <form action="" class="registers">
+            <div class="register">
+                <div class="date">
+                    <div class="number">
+                        <p class="para">date</p>
+                        <input type="date" class="input-date" placeholder="dd-mm-yy">
+                    </div>
+                    <div class="search">
+                        <img src="./icons8_search_500px_2.png" alt="" class="logo">
+                        <input type="text" placeholder="search by name or track">
+                    </div>
+                </div>
+                <div class="submit-phase">
+                    <button class="clockin" type="button">clock in</button>
+                    <button class="setting" type="button">settings</button>
+                </div>
+            </div>
+
+            <p class="page">attendance for selected date</p>
+
+
+            <div class="infos">
+                <p class="fill">#</p>
+                <p class="fill">student</p>
+                <p class="fill">track</p>
+                <p class="fill">status</p>
+                <p class="fill">clock in</p>
+                <p class="fill">clock out</p>
+                <p class="fill">daily</p>
+                <p class="fill">actions</p>
+            </div>
+
+            <div class="seperate">
+                <div class="line"></div>
+            </div>
+
+            <div class="values">
+                <input type="number" class="register-number" placeholder="#">
+                <input type="text" class="register-name" placeholder="student name">
+                <input type="tect" class="track" placeholder="frontend">
+                <input type="text" class="status" placeholder="not clock in">
+                <input type="number" class="clockin-value" placeholder="-">
+                <input type="number" class="clockout-value" placeholder="-">
+                <input type="number" class="dailytotal" placeholder="-">
+                <input type="number" class="actions" placeholder="clock in">
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
