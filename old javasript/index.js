@@ -201,7 +201,7 @@ function showEditDialog(studentId) {
   studentName.value = student.fullNames;
   studentTrack.value = student.track;
   p.textContent = "";
-  studentFormHeader.textContent = "Edit student";
+  studentFormHeader.textContent = "Edit";
 
   addstudentDialog.showModal();
 }
@@ -223,7 +223,7 @@ function showDeleteDialog(studentId) {
 
   studentToDelete = student.studentId;
 
-  deleteMessage.textContent = `Are you sure you want to delete this student ${student.fullNames}? This cannot action cannot be undone.`;
+  deleteMessage.textContent = `Are you sure you want to delete ${student.fullNames}? This action can't be undone.`;
 
   deleteDialog.showModal();
 }
